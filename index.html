@@ -94,13 +94,14 @@
         data: {}
     }).done(function(data) {
         console.log('get '+data.total);
+        // defer image loading..
+        $('.main').each(function() {
+         $(this).css('background-image', "url('images/default.jpg')");
+        });
         $('#total').fadeOut(300, function() {
           $(this).html(data.total).fadeIn(1000);
         });
-        // defer image loading..
-       $('.main').each(function() {
-        $(this).css('background-image', "url('images/default.jpg')");
-       });
+
     });
 
    </script>
