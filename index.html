@@ -87,12 +87,7 @@
    <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
    <script src="js/bootstrap.min.js" type="text/javascript"></script>
    <script>
-   // defer image loading..
-   $('.main').each(function() {
-    $(this).css('background-image', "url('images/default.jpg')");
-   })
-
-    $.ajax({
+   $.ajax({
         type: 'GET',
         url: 'http://malescast-mailchimp.morphaworks.com',
         dataType: 'jsonp',
@@ -102,7 +97,12 @@
         $('#total').fadeOut(300, function() {
           $(this).html(data.total).fadeIn(1000);
         });
+        // defer image loading..
+       $('.main').each(function() {
+        $(this).css('background-image', "url('images/default.jpg')");
+       });
     });
+
    </script>
 
 </html>
