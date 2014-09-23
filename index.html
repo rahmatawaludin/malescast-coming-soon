@@ -87,17 +87,16 @@
  </body>
    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
    <script>
+   // defer image loading..
+   $('.main').each(function() {
+     $(this).css('background-image', "url('images/default.jpg')");
+    });
    $.ajax({
         type: 'GET',
         url: 'http://malescast-mailchimp.morphaworks.com',
         dataType: 'jsonp',
         data: {}
     }).done(function(data) {
-        console.log('get '+data.total);
-        // defer image loading..
-        $('.main').each(function() {
-         $(this).css('background-image', "url('images/default.jpg')");
-        });
         $('#total').fadeOut(1000, function() {
           $(this).html(data.total).fadeIn(1000);
         });
