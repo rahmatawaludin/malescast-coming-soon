@@ -48,7 +48,7 @@
             <h4 class="motto">Screencast Web Development rutin.<br>Pake bahasa Indonesia.<br> Buat programmer males. Seperti saya.</h4>
             <div class="subscribe">
                 <h5 class="info-text">
-                    Udah ada <span id="total" class="badge">0</span> orang nih. Biar yang lagi bikin <br>tambah semangat, gabung waiting list ya...
+                    Udah ada <span id="total" class="badge">350</span> orang nih. Biar yang lagi bikin <br>tambah semangat, gabung waiting list ya...
                 </h5>
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4 col-sm6-6 col-sm-offset-3 text-center">
@@ -62,7 +62,7 @@
                           <button type="submit" class="btn btn-danger btn-fill">Gabung</button>
                         </form>
                         <h3 class="text-center note small">
-                            PS: Saya berencana membuat 1 video GRATIS, untuk setiap 50 waiting list. Request topik video di <a href="https://www.facebook.com/malescast">FB Malescast</a> atau <a href="https://twitter.com/malescast">@malescast</a>. Total <span id="totalVideo" class="badge">0</span> video gratis.
+                            PS: Saya berencana membuat 1 video GRATIS, untuk setiap 50 waiting list. Request topik video di <a href="http://malescast.uservoice.com/forums/266675-general">http://malescast.uservoice.com</a>. Total <span id="totalVideo" class="badge">7</span> video gratis.
                         </h3>
                     </div>
                 </div>
@@ -92,6 +92,9 @@
    $('.main').each(function() {
      $(this).css('background-image', "url('images/default.jpg')");
     });
+   $('#totalVideo').fadeOut(1000, function() {
+          $(this).html(Math.floor(data.total/50)).fadeIn(1000);
+        });
    $.ajax({
         type: 'GET',
         url: 'http://malescast-mailchimp.morphaworks.com',
@@ -104,7 +107,6 @@
         $('#totalVideo').fadeOut(1000, function() {
           $(this).html(Math.floor(data.total/50)).fadeIn(1000);
         });
-
     });
 
    </script>
