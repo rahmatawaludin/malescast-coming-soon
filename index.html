@@ -92,9 +92,6 @@
    $('.main').each(function() {
      $(this).css('background-image', "url('images/default.jpg')");
     });
-   $('#totalVideo').fadeOut(1000, function() {
-          $(this).html(Math.floor(data.total/50)).fadeIn(1000);
-        });
    $.ajax({
         type: 'GET',
         url: 'http://malescast-mailchimp.morphaworks.com',
