@@ -502,6 +502,9 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
         position: fixed;
         bottom: 20px;
     }
+    .main .logo {
+        margin-top: 40px;
+    }
 }
 @media (min-width:1200px){
     .main .subscribe .form-group{
